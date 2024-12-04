@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 01 - Víctor Luévano</title>
+</head>
+
+<body>
+    <script>
+        function CAL() {
+            let bandera = true;
+
+            while (bandera) {
+                let n1 = Math.floor(Math.random() * 10);
+                let n2 = Math.floor(Math.random() * 10);
+                let respuestaCorrecta = n1 + n2;
+
+                let problema = `What is ${n1} + ${n2}?`;
+
+                let respuesta = prompt(problema);
+
+                let respuestaUsuario = Number(respuesta);
+
+                while (respuestaUsuario !== respuestaCorrecta) {
+                    alert("!Respuesta incorrecta! Intenta otra vez");
+                    respuestaUsuario = Number(prompt(problema));
+                }
+
+                const mensajes = [
+                    "!Bien hecho!",
+                    "!Muy bien!",
+                    "!Correcto!",
+                    "!Sigue así!",
+                    "!Buen trabajo!"
+                ];
+
+                alert(mensajes[Math.floor(Math.random() * mensajes.length)]);
+
+                bandera = confirm("¿Quieres resolver otro problema?");
+            }
+
+            alert("Adios");
+        }
+        CAL();
+    </script>
+</body>
+
+</html>
